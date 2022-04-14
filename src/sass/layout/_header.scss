@@ -1,0 +1,86 @@
+.header {
+    background-color: var(--accent-color);
+}
+.header-wrap {
+    padding-top: 45px;
+    padding-bottom: 45px;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 20px;
+    .contacts__link {
+        font-family: 'Open Sans';
+        font-size: 20px;
+        line-height: 1.15;
+        text-align: right;
+        @media screen and (min-width: 768px) {
+            font-size: 40px;
+        }
+    }
+    .contacts__btn {
+        width: 120px;
+        font-size: 16px;
+        font-family: var(--primary-font);
+        font-weight: 700;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px dashed var(--primary-text-color);
+        color: var(--primary-text-color);
+        @media screen and (min-width: 768px) {
+            width: 171px;
+            font-size: 24px;
+        }
+    }
+}
+
+.nav-wrap {
+    background-color: var(--secondary-bg-color);
+}
+.nav__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    @media screen and (min-width: 768px) {
+        flex-wrap: nowrap;
+    }
+    
+    .nav__link {
+        color: var(--secondary-text-color);
+        font-family: var(--primary-font);
+        font-size: 18px;
+        font-weight: 400;
+        @media screen and (min-width: 1000px) {
+            font-size: 30px;
+        }
+            &::after {
+                color: var(--secondary-text-color);
+                position: relative;
+                display: none;
+                content: '|';
+                left: 20px;
+                @media screen and (min-width: 1000px) {
+                    display: inline;
+                }
+            }
+            &:hover, 
+            &:focus {
+                text-decoration: underline;
+            }
+                       
+    } 
+}
+.nav__item:last-child {
+    .nav__link::after {
+        content: '';
+    }
+}
